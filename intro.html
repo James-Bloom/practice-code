@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Open Sans",sans-serif;
+            background: #222;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            border: 10px solid #ccc;
+            border-radius: 10px;
+            line-height: 200px;
+            text-align: center;
+            color: #222;
+            font-size: 25px;
+            font-weight: 600;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+        .box::before{
+            content: "";
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: #00acee;
+            left: 50%;
+            transform: translateX(-50%) rotate(360deg);
+            border-radius: 40%;
+            animation: fill 7s ease-in-out;
+            z-index: -1;
+            top: -50px;
+        }
+        @keyframes fill {
+            from{
+                top: 250px;
+                transform: translateX(-50%) rotate(0deg);
+            }
+
+            to{
+                top: -50px;
+                transform: translateX(-50%) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <i class="fas fa-burn" style="color: #222;font-size: 70px;top: 50%;left: 50%;transform: translate(-50%,-30%);"></i>
+    </div>
+</body>
+</html>
